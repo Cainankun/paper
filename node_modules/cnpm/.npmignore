@@ -1,0 +1,10 @@
+test/
+coverage.html
+lib-cov/
+Makefile
+*.yml
+logo.png
+.jshintrc
+.jshintignore
+build/
+coverage/
