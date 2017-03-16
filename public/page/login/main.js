@@ -9,9 +9,10 @@ $(document).ready(function(){
 			url:"/login",
 			type:"POST",
 			data:data,
-			// success:function(){
-			// 	window.location.href="addlab.html"
-			// }
+			complete:function(XHR){
+				console.log(XHR.status+XHR.responseText);
+
+			}
 		})
 	})
 })

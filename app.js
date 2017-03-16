@@ -31,7 +31,7 @@ app.use(session({
 }));
 
 app.use(function(req,res,next){
-  if(req.session.user||req.path=="/login.html"||req.path=="/login"){
+  if(req.session.user||req.path=="/login.html"||req.path=="/login"||req.path=="/signup"||req.path=="/signup.html"){
     //如果已经登陆或者访问的是登陆页就放行
     console.log("login or had session.user");
     next();
