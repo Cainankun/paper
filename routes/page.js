@@ -20,4 +20,8 @@ router.get('/login.html',function(req,res,next){
 	var login=fs.createReadStream('public/page/login/login.html',{flags:'r',encoding:null});
 	login.pipe(res);
 })
+router.get('/my_information.html',function(req,res,next){
+	var information=fs.createReadStream('public/page/my_information/my_information.html',{flags:'r',encoding:null});
+	information.pipe(res);
+})
 module.exports = router;

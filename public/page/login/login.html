@@ -2,15 +2,58 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- 	bootstrap -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<style type="text/css">
+	/* 	h1{
+			color: #0275d8;
+			margin: 50px auto;
+			width: 720px;
+			text-align: center;
+		} */
+		body{
+			background-color: #EEE;
+		}
+		.container{
+			width: 720px;
+			max-width: 100%;
+			padding-top: 50px;
+		}
+		.form-signin{
+			max-width: 330px;
+			padding: 15px;
+			margin: 0 auto;
+		}
+		.checkbox{
+			padding: 10px 0;
+		}
+	</style>
 	<title>登陆</title>
 </head>
 <body>
-	<div>
-		<label>手机号码：<input type="text" id="account"></label><br>
+	<div class="container">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">请登录</h2>
+			<label for="account" class="sr-only">账号</label>
+			<input type="text" id="account" class="form-control" placeholder="手机号码" autofocus>
+			<label for="password" class="sr-only">密码</label>
+			<input type="password" id="password" class="form-control" placeholder="密码"  name="">
+			<div class="checkbox">
+				<label>
+					<input type="radio" value="teacher" name="kind" checked="checked">老师
+				</label>
+				<label>
+					<input type="radio" value="student" name="kind">学生
+				</label>
+			</div>
+			<input type="button" id="submit" value="登录" class="btn btn-lg btn-primary btn-block">
+		</form>
+		<!-- <label>手机号码：<input type="text" id="account"></label><br>
 		<label>密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" id="password"></label><br>
 		<label>老师<input type="radio" value="teacher" checked="checked" name="kind"></label>
 		<label>学生<input type="radio" value="student" name="kind"></label><br>
-		<input type="submit" id="submit" value="提交" name="">
+		<input type="submit" id="submit" value="提交" name=""> -->
 	</div>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="/page/login/main.js"></script>

@@ -15,12 +15,12 @@ $("#submit").click(function(){
 		$.ajax({
 			type:"POST",
 			data:data,
-			url:"/signup",
-			complete:function(XHR){
-				if (XHR.status==200) {
-					window.location.href="/login.html";
-				}
-			}
+			url:"/signup"
+			// complete:function(XHR){
+			// 	if (XHR.status==200) {
+			// 		window.location.href="/login.html";
+			// 	}
+			// }
 		})
 	}else{
 		console.log("账号格式不正确")
