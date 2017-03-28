@@ -13,6 +13,7 @@ var login=require('./routes/login');
 var my_information=require('./routes/my_information');
 var my_lab=require('./routes/my_lab');
 var lab_list=require('./routes/lab_list');
+var change_phone=require('./routes/change_phone');
 
 
 var app = express();
@@ -34,17 +35,17 @@ app.use(session({
 	secret: 'cnk'
 }));
 
-// app.use(function(req,res,next){
-//   if(req.session.user||req.path=="/login.html"||req.path=="/login"||req.path=="/signup"||req.path=="/signup.html"){
-//     //如果已经登陆或者访问的是登陆页就放行
-//     console.log("login or had session.user");
-//     next();
-//   }else{
-//     //转向登陆页面
-//     console.log("doesnot has session.user")
-//     res.redirect("/login.html");
-//   }
-// })
+app.use(function(req,res,next){
+  if(req.session.user||req.path=="/login.html"||req.path=="/login"||req.path=="/signup"||req.path=="/signup.html"){
+    //如果已经登陆或者访问的是登陆页就放行
+    // console.log("login or had session.user");
+    next();
+  }else{
+    //转向登陆页面
+    console.log("doesnot has session.user")
+    res.redirect("/login.html");
+  }
+})
 
 
 app.use('/', page);
@@ -54,6 +55,7 @@ app.use('/my_information',my_information);
 app.use('/login',login);
 app.use('/my_lab',my_lab);
 app.use('/lab_list',lab_list);
+app.use('/change_phone',change_phone);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

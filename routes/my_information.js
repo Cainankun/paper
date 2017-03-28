@@ -15,6 +15,7 @@ router.get('',function(req,res,next){
 				res.sendStatus(500);
 			}else{
 				data=results;
+				data[0].kind=req.session.kind;
 				console.log("results:"+data[0].name);
 				res.send(data);
 			}

@@ -15,7 +15,10 @@ $("#submit").click(function(){
 		$.ajax({
 			type:"POST",
 			data:data,
-			url:"/signup"
+			url:"/signup",
+			success:function(){
+				window.location.href="/login.html";
+			}
 			// complete:function(XHR){
 			// 	if (XHR.status==200) {
 			// 		window.location.href="/login.html";

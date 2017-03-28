@@ -1,17 +1,20 @@
 $(document).ready(function(){
 	$("#submit").click(function(){
-		var data={};
-		data.account=$("#account").val(),
-		data.password=$("#password").val(),
-		data.kind=$("input[name=kind]:checked").val();
-		console.log(data);
+		//存储账号密码
+		var message={};
+		message.account=$("#account").val(),
+		message.password=$("#password").val(),
+		message.kind=$("input[name=kind]:checked").val();
 		$.ajax({
 			url:"/login",
 			type:"POST",
-			data:data,
-			complete:function(XHR){
-				console.log(XHR.status+XHR.responseText);
-
+			data:message,
+			success:function(data){
+				console.log("data:"+data);
+				window.location.href="/lab_list.html";
+			},
+			complete:function(XHR,textStatus){
+				console.log(XHR.responseText);
 			}
 		})
 	})

@@ -24,4 +24,8 @@ router.get('/my_information.html',function(req,res,next){
 	var information=fs.createReadStream('public/page/my_information/my_information.html',{flags:'r',encoding:null});
 	information.pipe(res);
 })
+router.get('/lab_list.html',function(req,res,next){
+	var lab_list=fs.createReadStream('public/page/lab_list/lab_list.html',{flags:'r',encoding:null});
+	lab_list.pipe(res);
+})
 module.exports = router;
